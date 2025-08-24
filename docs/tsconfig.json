@@ -1,0 +1,12 @@
+{
+    "extends": ["@vue/tsconfig/tsconfig.json"],
+    "include": [
+        ".vitepress/**/*",
+        ".vitepress/**/*.vue"
+    ],
+    "vueCompilerOptions": {
+        "vitePressExtensions": [
+            ".md"
+        ],
+    }
+}

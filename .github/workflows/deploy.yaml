@@ -1,0 +1,54 @@
+name: Deploy VitePress to GitHub Pages
+
+on:
+  push:
+    branches: [ main ] # only deploy when main is updated
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      # 1. Install pnpm before Node
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10 # change if you use a different pnpm version
+          run_install: false
+
+      # 2. Setup Node.js (with pnpm caching)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: 'pnpm'
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Plugin
+        run: pnpm run build
+
+      # 4. Build VitePress site
+      - name: Build VitePress site
+        run: pnpm run docs:build
+
+      # 5. Prevent Jekyll from messing with files like _xxx
+      - name: Add .nojekyll
+        run: echo > docs/.vitepress/dist/.nojekyll
+
+      # 6. Deploy to gh-pages branch
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/.vitepress/dist
+          publish_branch: gh-pages
