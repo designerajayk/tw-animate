@@ -2,7 +2,7 @@
     "type": "module",
     "$schema": "https://json.schemastore.org/package.json",
     "name": "tw-animate",
-    "version": "1.0.0-beta.0",
+    "version": "1.0.0-beta.1",
     "description": "A configuration to use Animate.css with Tailwind CSS",
     "keywords": [
         "animate.css",
