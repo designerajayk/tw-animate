@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import DefaultTheme from 'vitepress/theme'
-import VPButton from 'vitepress/dist/client/theme-default/components/VPButton.vue'
-import VPImage from 'vitepress/dist/client/theme-default/components/VPImage.vue'
-import './index.css'
+import VPButton from "vitepress/dist/client/theme-default/components/VPButton.vue";
+import VPImage from "vitepress/dist/client/theme-default/components/VPImage.vue";
+import DefaultTheme from "vitepress/theme";
+import "./index.css";
 </script>
 
 <template>

@@ -1,11 +1,11 @@
 {
-  "extends": "@tsconfig/node22/tsconfig.json",
-  "compilerOptions": {
-    "baseUrl": "src",
-    "declaration": true,
-    "exactOptionalPropertyTypes": true,
-    "outDir": "dist",
-    "skipLibCheck": false
-  },
-  "exclude": ["dist"]
+	"extends": "@tsconfig/node22/tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": "src",
+		"declaration": true,
+		"exactOptionalPropertyTypes": true,
+		"outDir": "dist",
+		"skipLibCheck": false
+	},
+	"exclude": ["dist"]
 }

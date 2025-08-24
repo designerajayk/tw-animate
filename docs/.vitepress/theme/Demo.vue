@@ -78,247 +78,247 @@
 </template>
 
 <script setup lang="ts">
-import VPFlyout from 'vitepress/dist/client/theme-default/components/VPFlyout.vue'
-import { ref } from 'vue'
+import type VPFlyout from "vitepress/dist/client/theme-default/components/VPFlyout.vue";
+import { ref } from "vue";
 
 const animations: Record<string, string[]> = {
-  'Tailwind CSS Builtins': [
-    //
-    'twSpin',
-    'twPing',
-    'twPulse',
-    'twBounce',
-  ],
+	"Tailwind CSS Builtins": [
+		//
+		"twSpin",
+		"twPing",
+		"twPulse",
+		"twBounce",
+	],
 
-  'Attention Seekers': [
-    //
-    'bounce',
-    'flash',
-    'pulse',
-    'rubberBand',
-    'shakeX',
-    'shakeY',
-    'headShake',
-    'swing',
-    'tada',
-    'wobble',
-    'jello',
-    'heartBeat',
-  ],
+	"Attention Seekers": [
+		//
+		"bounce",
+		"flash",
+		"pulse",
+		"rubberBand",
+		"shakeX",
+		"shakeY",
+		"headShake",
+		"swing",
+		"tada",
+		"wobble",
+		"jello",
+		"heartBeat",
+	],
 
-  'Back Entrances': [
-    //
-    'backInDown',
-    'backInLeft',
-    'backInRight',
-    'backInUp',
-  ],
+	"Back Entrances": [
+		//
+		"backInDown",
+		"backInLeft",
+		"backInRight",
+		"backInUp",
+	],
 
-  'Back Exits': [
-    //
-    'backOutDown',
-    'backOutLeft',
-    'backOutRight',
-    'backOutUp',
-  ],
+	"Back Exits": [
+		//
+		"backOutDown",
+		"backOutLeft",
+		"backOutRight",
+		"backOutUp",
+	],
 
-  'Bouncing Entrances': [
-    //
-    'bounceIn',
-    'bounceInDown',
-    'bounceInLeft',
-    'bounceInRight',
-    'bounceInUp',
-  ],
+	"Bouncing Entrances": [
+		//
+		"bounceIn",
+		"bounceInDown",
+		"bounceInLeft",
+		"bounceInRight",
+		"bounceInUp",
+	],
 
-  'Bouncing Exits': [
-    //
-    'bounceOut',
-    'bounceOutDown',
-    'bounceOutLeft',
-    'bounceOutRight',
-    'bounceOutUp',
-  ],
+	"Bouncing Exits": [
+		//
+		"bounceOut",
+		"bounceOutDown",
+		"bounceOutLeft",
+		"bounceOutRight",
+		"bounceOutUp",
+	],
 
-  'Fade Entrances': [
-    //
-    'fadeIn',
-    'fadeInDown',
-    'fadeInDownBig',
-    'fadeInLeft',
-    'fadeInLeftBig',
-    'fadeInRight',
-    'fadeInRightBig',
-    'fadeInUp',
-    'fadeInUpBig',
-    'fadeInTopLeft',
-    'fadeInTopRight',
-    'fadeInBottomLeft',
-    'fadeInBottomRight',
-  ],
+	"Fade Entrances": [
+		//
+		"fadeIn",
+		"fadeInDown",
+		"fadeInDownBig",
+		"fadeInLeft",
+		"fadeInLeftBig",
+		"fadeInRight",
+		"fadeInRightBig",
+		"fadeInUp",
+		"fadeInUpBig",
+		"fadeInTopLeft",
+		"fadeInTopRight",
+		"fadeInBottomLeft",
+		"fadeInBottomRight",
+	],
 
-  'Fade Exits': [
-    //
-    'fadeOut',
-    'fadeOutDown',
-    'fadeOutDownBig',
-    'fadeOutLeft',
-    'fadeOutLeftBig',
-    'fadeOutRight',
-    'fadeOutRightBig',
-    'fadeOutUp',
-    'fadeOutUpBig',
-    'fadeOutTopLeft',
-    'fadeOutTopRight',
-    'fadeOutBottomRight',
-    'fadeOutBottomLeft',
-  ],
+	"Fade Exits": [
+		//
+		"fadeOut",
+		"fadeOutDown",
+		"fadeOutDownBig",
+		"fadeOutLeft",
+		"fadeOutLeftBig",
+		"fadeOutRight",
+		"fadeOutRightBig",
+		"fadeOutUp",
+		"fadeOutUpBig",
+		"fadeOutTopLeft",
+		"fadeOutTopRight",
+		"fadeOutBottomRight",
+		"fadeOutBottomLeft",
+	],
 
-  Flippers: [
-    //
-    'flip',
-    'flipInX',
-    'flipInY',
-    'flipOutX',
-    'flipOutY',
-  ],
+	Flippers: [
+		//
+		"flip",
+		"flipInX",
+		"flipInY",
+		"flipOutX",
+		"flipOutY",
+	],
 
-  LightSpeed: [
-    //
-    'lightSpeedInRight',
-    'lightSpeedInLeft',
-    'lightSpeedOutRight',
-    'lightSpeedOutLeft',
-  ],
+	LightSpeed: [
+		//
+		"lightSpeedInRight",
+		"lightSpeedInLeft",
+		"lightSpeedOutRight",
+		"lightSpeedOutLeft",
+	],
 
-  'Rotating Entrances': [
-    //
-    'rotateIn',
-    'rotateInDownLeft',
-    'rotateInDownRight',
-    'rotateInUpLeft',
-    'rotateInUpRight',
-  ],
+	"Rotating Entrances": [
+		//
+		"rotateIn",
+		"rotateInDownLeft",
+		"rotateInDownRight",
+		"rotateInUpLeft",
+		"rotateInUpRight",
+	],
 
-  'Rotating Exits': [
-    //
-    'rotateOut',
-    'rotateOutDownLeft',
-    'rotateOutDownRight',
-    'rotateOutUpLeft',
-    'rotateOutUpRight',
-  ],
+	"Rotating Exits": [
+		//
+		"rotateOut",
+		"rotateOutDownLeft",
+		"rotateOutDownRight",
+		"rotateOutUpLeft",
+		"rotateOutUpRight",
+	],
 
-  Specials: [
-    //
-    'hinge',
-    'jackInTheBox',
-    'rollIn',
-    'rollOut',
-  ],
+	Specials: [
+		//
+		"hinge",
+		"jackInTheBox",
+		"rollIn",
+		"rollOut",
+	],
 
-  'Zooming Entrances': [
-    //
-    'zoomIn',
-    'zoomInDown',
-    'zoomInLeft',
-    'zoomInRight',
-    'zoomInUp',
-  ],
+	"Zooming Entrances": [
+		//
+		"zoomIn",
+		"zoomInDown",
+		"zoomInLeft",
+		"zoomInRight",
+		"zoomInUp",
+	],
 
-  'Zooming Exits': [
-    //
-    'zoomOut',
-    'zoomOutDown',
-    'zoomOutLeft',
-    'zoomOutRight',
-    'zoomOutUp',
-  ],
+	"Zooming Exits": [
+		//
+		"zoomOut",
+		"zoomOutDown",
+		"zoomOutLeft",
+		"zoomOutRight",
+		"zoomOutUp",
+	],
 
-  'Sliding Entrances': [
-    //
-    'slideInDown',
-    'slideInLeft',
-    'slideInRight',
-    'slideInUp',
-  ],
+	"Sliding Entrances": [
+		//
+		"slideInDown",
+		"slideInLeft",
+		"slideInRight",
+		"slideInUp",
+	],
 
-  'Sliding Exits': [
-    //
-    'slideOutDown',
-    'slideOutLeft',
-    'slideOutRight',
-    'slideOutUp',
-  ],
-}
+	"Sliding Exits": [
+		//
+		"slideOutDown",
+		"slideOutLeft",
+		"slideOutRight",
+		"slideOutUp",
+	],
+};
 
 const items = Object.entries(animations).map(([group, names]) => ({
-  text: group,
-  items: names.map((name) => ({ link: '/animations#', text: name })),
-}))
+	text: group,
+	items: names.map((name) => ({ link: "/animations#", text: name })),
+}));
 
-const flyout = ref<InstanceType<typeof VPFlyout>>()
+const flyout = ref<InstanceType<typeof VPFlyout>>();
 
 const open = () => {
-  flyout.value?.$el.classList.remove('closed')
-}
+	flyout.value?.$el.classList.remove("closed");
+};
 
 const close = () => {
-  try {
-    // @ts-ignore
-    flyout.value.$.setupState.open = false
-    flyout.value?.$el.classList.add('closed')
-  } catch {}
-}
+	try {
+		// @ts-expect-error
+		flyout.value.$.setupState.open = false;
+		flyout.value?.$el.classList.add("closed");
+	} catch {}
+};
 
-const animation = ref('twSpin')
+const animation = ref("twSpin");
 
 const onClick = (e: MouseEvent | KeyboardEvent) => {
-  if (e instanceof KeyboardEvent) {
-    if (e.code !== 'Space') return
-  }
-  open()
-  const el = e.target as HTMLAnchorElement
-  if (el.matches('.VPLink')) {
-    e.preventDefault()
-    animation.value = el.innerText.trim()
-    close()
-  }
-}
+	if (e instanceof KeyboardEvent) {
+		if (e.code !== "Space") return;
+	}
+	open();
+	const el = e.target as HTMLAnchorElement;
+	if (el.matches(".VPLink")) {
+		e.preventDefault();
+		animation.value = el.innerText.trim();
+		close();
+	}
+};
 
-const loop = ref(false)
-const img = ref<HTMLImageElement>()
+const loop = ref(false);
+const img = ref<HTMLImageElement>();
 
 const repeat = () => {
-  if (loop.value) return
-  img.value?.classList.remove(`animate-${animation.value}`)
-  const _ = window.getComputedStyle(img.value!).opacity
-  img.value?.classList.add(`animate-${animation.value}`)
-}
+	if (loop.value) return;
+	img.value?.classList.remove(`animate-${animation.value}`);
+	const _ = window.getComputedStyle(img.value!).opacity;
+	img.value?.classList.add(`animate-${animation.value}`);
+};
 
 const toggleLoop = () => {
-  if (loop.value) {
-    const handleIteration = () => {
-      loop.value = false
-      img.value?.removeEventListener('animationiteration', handleIteration)
-    }
-    img.value?.addEventListener('animationiteration', handleIteration)
-  } else {
-    loop.value = true
-  }
-}
+	if (loop.value) {
+		const handleIteration = () => {
+			loop.value = false;
+			img.value?.removeEventListener("animationiteration", handleIteration);
+		};
+		img.value?.addEventListener("animationiteration", handleIteration);
+	} else {
+		loop.value = true;
+	}
+};
 
-const copied = ref(false)
+const copied = ref(false);
 
 const copy = () => {
-  navigator.clipboard.writeText(
-    `animate-${animation.value}${loop.value ? ' animate-infinite' : ''}`,
-  )
-  copied.value = true
-  setTimeout(() => {
-    copied.value = false
-  }, 2000)
-}
+	navigator.clipboard.writeText(
+		`animate-${animation.value}${loop.value ? " animate-infinite" : ""}`,
+	);
+	copied.value = true;
+	setTimeout(() => {
+		copied.value = false;
+	}, 2000);
+};
 </script>
 
 <style scoped lang="postcss">

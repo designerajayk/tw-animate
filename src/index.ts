@@ -1,8 +1,7 @@
-import plugin from 'tailwindcss/plugin.js'
-
-import theme from './theme.js'
-import plugins from './plugins.js'
+import plugin from "tailwindcss/plugin.js";
+import plugins from "./plugins.js";
+import theme from "./theme.js";
 
 export default plugin(plugins, {
-    theme,
-})
+	theme,
+});
