@@ -18,13 +18,10 @@ const expandArray = <T extends number | string>(
 	inKey = false,
 	transform = (v: T): T => v,
 ): Record<string, string> =>
-	arr.reduce(
-		(a, v) => ({
-			...a,
-			[`${v}${inKey ? append : ""}`]: `${transform(v)}${append}`,
-		}),
-		{},
-	);
+	arr.reduce((a: Record<string, string>, v) => {
+		a[`${v}${inKey ? append : ""}`] = `${transform(v)}${append}`;
+		return a;
+	}, {});
 
 export const duration = expandArray(
 	[75, 100, 150, 200, 300, 500, 700, 1000],

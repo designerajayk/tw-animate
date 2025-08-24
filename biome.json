@@ -7,11 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": true,
-		"includes": [
-			"src/**/*",
-			"docs/.vitepress/theme/**/*",
-			"docs/**/*config.js*"
-		]
+		"includes": ["src/**/*", "docs/**/*config.{js,ts}*"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -23,7 +19,8 @@
 			"recommended": true,
 			"suspicious": {
 				"recommended": true,
-				"noUnknownAtRules": "off"
+				"noUnknownAtRules": "off",
+				"noAssignInExpressions": "off"
 			}
 		}
 	},
