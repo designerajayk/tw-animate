@@ -4,7 +4,7 @@ import path from "node:path";
 import { transform } from "lightningcss";
 import { delay, distance, duration, ease, fill, repeat } from "./defaults.ts";
 import { keyframes } from "./keyframes.ts";
-import { keyframeUtils } from "./utilities.ts";
+import { animationUtils, keyframeUtils } from "./utilities.ts";
 
 const animations = Object.keys(keyframes)
 	.map((k) =>
@@ -89,37 +89,14 @@ const utilities = [
 	},
 ];
 
-const prefixed = [
-	{
-		values: ["none"],
-		cssKey: "animation",
-	},
-	{
-		values: [
-			["faster", "0.5s"],
-			["fast", "0.8s"],
-			["slow", "2s"],
-			["slower", "3s"],
-		],
-		cssKey: "animation-duration",
-	},
-	{
-		values: ["normal", "reverse", "alternate", "alternate-reverse"],
-		cssKey: "animation-direction",
-	},
-	{
-		values: ["paused", "running"],
-		cssKey: "animation-play-state",
-	},
-	{
-		values: ["infinite"],
-		cssKey: "animation-iteration-count",
-	},
-	{
-		values: [["ease", "cubic-bezier(.25,.1,.25,1)"]],
-		cssKey: "animation-timing-function",
-	},
-];
+const prefixedCss = Object.entries(animationUtils).map(([name, utils]) =>
+	`@utility animate-${name} {
+    ${Object.entries(utils)
+		.map(([key, value]) => `${key.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()}: ${value};`)
+		.join("\n")}
+}`,
+).join('\n')
+
 
 const css = `
 @utility animate-duration-* {
@@ -138,17 +115,7 @@ const css = `
 
 ${utilities.map(buildUtility).join("\n\n")}
 
-${prefixed
-	.map(({ values, cssKey }) =>
-		values
-			.map(
-				(val) => `@utility animate-${Array.isArray(val) ? val[0] : val} {
-    ${cssKey} : ${Array.isArray(val) ? val[1] : val};
-}`,
-			)
-			.join("\n\n"),
-	)
-	.join("\n\n")}
+${prefixedCss}
 
 @theme {
   ${animations}
