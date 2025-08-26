@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import "./index.css";
-</script>
-
 <template>
   <DefaultTheme.Layout>
     <template #home-features-before>
@@ -38,3 +34,8 @@ import "./index.css";
     </template>
   </DefaultTheme.Layout>
 </template>
+
+<script setup lang="ts">
+import "./index.css";
+import DefaultTheme, { VPImage, VPButton } from 'vitepress/theme'
+</script>

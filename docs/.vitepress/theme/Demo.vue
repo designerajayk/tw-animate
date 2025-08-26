@@ -78,7 +78,7 @@
 </template>
 
 <script setup lang="ts">
-import type VPFlyout from "vitepress/dist/client/theme-default/components/VPFlyout.vue";
+import VPFlyout from "vitepress/dist/client/theme-default/components/VPFlyout.vue";
 import { ref } from "vue";
 
 const animations: Record<string, string[]> = {
