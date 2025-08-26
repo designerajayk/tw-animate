@@ -6,6 +6,7 @@ export default defineConfig({
 	description:
 		"tw-animate is a package that brings Animate.css classes to Tailwind CSS",
 	cleanUrls: true,
+    head: [['link', { rel: 'icon', href: '/tw-animate/favicon.ico' }]],
 
 	themeConfig: {
 		socialLinks: [
