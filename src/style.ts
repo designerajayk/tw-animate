@@ -6,6 +6,9 @@ import { delay, distance, duration, ease, fill, repeat } from "./defaults.ts";
 import { keyframes } from "./keyframes.ts";
 import { animationUtils, keyframeUtils } from "./utilities.ts";
 
+const kebabCase = (str: string) =>
+    str.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
+
 const animations = Object.keys(keyframes)
 	.map((k) =>
 		[
@@ -23,7 +26,7 @@ const keyframesCss = Object.entries(keyframes)
 			.map(([percent, props]) => {
 				const propStrings = Object.entries(props)
 					.map(([prop, value]) => {
-						return `  ${prop}: ${value};`;
+                        return `  ${kebabCase(prop)}: ${value};`;
 					})
 					.join("\n");
 				return `${percent} {\n${propStrings}\n}`;
@@ -92,7 +95,7 @@ const utilities = [
 const prefixedCss = Object.entries(animationUtils).map(([name, utils]) =>
 	`@utility animate-${name} {
     ${Object.entries(utils)
-		.map(([key, value]) => `${key.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()}: ${value};`)
+		.map(([key, value]) => `${kebabCase(key)}: ${value};`)
 		.join("\n")}
 }`,
 ).join('\n')
