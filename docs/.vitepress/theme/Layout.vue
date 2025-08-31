@@ -11,6 +11,7 @@
         >
           Easiest way to use animations in Tailwind CSS
         </h1>
+        <p class="max-w-[45rem] text-gray-500 text-center mt-6">A drop-in replacement for [animated-tailwindcss](https://github.com/brc-dd/animated-tailwindcss), built with Tailwind’s new CSS-first approach. No plugins—just pure CSS animations, ready to use.</p>
         <div class="flex flex-wrap justify-center pt-6">
           <div class="shrink-0 p-1.5">
             <VPButton text="Get Started" href="/installation" />

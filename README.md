@@ -11,6 +11,7 @@
   A configuration to use <a href="https://github.com/animate-css/animate.css">Animate.css</a> with
   <a href="https://github.com/tailwindlabs/tailwindcss">Tailwind CSS</a>.
   <br />
+  <blockquote>A drop-in replacement for [animated-tailwindcss](https://github.com/brc-dd/animated-tailwindcss), built with Tailwind’s new CSS-first approach. No plugins—just pure CSS animations, ready to use.</blockquote>
   <br />
   <a href="https://github.com/designerajayk/tw-animate/actions/workflows/ci.yaml">
     <img src="https://img.shields.io/github/actions/workflow/status/designerajayk/tw-animate/ci.yaml?branch=main&label=CI&logo=github&style=flat-square" />
@@ -84,5 +85,5 @@ module.exports = {
 - [Transform.tools](https://github.com/ritz078/transform) &ndash; for converting
   Animate.css to JS &ndash; used under
   [the MIT license](https://github.com/ritz078/transform/blob/master/LICENSE).
-- [animated-tailwindcss](https://www.npmjs.com/package/animated-tailwindcss) &ndash; fork this to use tailwind 4
-  [the MIT license](https://www.npmjs.com/package/animated-tailwindcss).
+- [animated-tailwindcss](https://www.npmjs.com/package/animated-tailwindcss) &ndash; forked this to use tailwind 4
+  [the MIT license](https://github.com/brc-dd/animated-tailwindcss/blob/main/LICENSE.md).
