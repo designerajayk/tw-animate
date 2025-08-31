@@ -12,6 +12,5 @@ features:
       and utility classes.
   - title: Zero extra config needed
     details:
-      Wrap your Tailwind CSS config with a function and start using animations
-      as if they are inbuilt.
+        Just import once and use animations like they’re built into Tailwind.
 ---
