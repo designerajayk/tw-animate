@@ -11,7 +11,7 @@
   A configuration to use <a href="https://github.com/animate-css/animate.css">Animate.css</a> with
   <a href="https://github.com/tailwindlabs/tailwindcss">Tailwind CSS</a>.
   <br />
-  <blockquote>A drop-in replacement for [animated-tailwindcss](https://github.com/brc-dd/animated-tailwindcss), built with Tailwind’s new CSS-first approach. No plugins—just pure CSS animations, ready to use.</blockquote>
+  <blockquote>A drop-in replacement for <a href="https://github.com/brc-dd/animated-tailwindcss" target="_blank">animated-tailwindcss</a>, built with Tailwind’s new CSS-first approach. No plugins—just pure CSS animations, ready to use.</blockquote>
   <br />
   <a href="https://github.com/designerajayk/tw-animate/actions/workflows/ci.yaml">
     <img src="https://img.shields.io/github/actions/workflow/status/designerajayk/tw-animate/ci.yaml?branch=main&label=CI&logo=github&style=flat-square" />
